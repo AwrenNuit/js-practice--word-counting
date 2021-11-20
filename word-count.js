@@ -1,8 +1,12 @@
-//
-// This is only a SKELETON file for the 'Word Count' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+export const countWords = (sentence) => {
+  let wordList = {};
 
-export const countWords = () => {
-  throw new Error('Remove this statement and implement this function');
+  for (let word of sentence.match(/\w+('\w+)?/g)) {
+    word = word.toLowerCase();
+
+    if (wordList[word]) wordList[word] += 1;
+    if (!wordList[word]) wordList[word] = 1;
+  }
+
+  return wordList;
 };
