@@ -1,7 +1,7 @@
 export const countWords = (sentence) => {
   let wordList = {};
 
-  for (let word of sentence.match(/\w+('\w+)?/g)) {
+  for (let word of sentence.match(/\w+('d|'ll|'m|'clock|'re|'s|'t|'ve)?/g)) {
     word = word.toLowerCase();
 
     if (wordList[word]) wordList[word] += 1;
